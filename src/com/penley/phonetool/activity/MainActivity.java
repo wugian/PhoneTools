@@ -12,12 +12,15 @@ import android.widget.GridView;
 
 import com.penley.phonetool.R;
 import com.penley.phonetool.adapter.FunctionGridAdapter;
+import com.penley.phonetool.utils.BasicFunction;
+import com.penley.phonetool.utils.DEBUG;
 
 public class MainActivity extends Activity implements OnItemClickListener {
 
 	GridView gr;
 	FunctionGridAdapter adapter;
 	Context context = this;
+	private boolean ligntOn = false;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -36,12 +39,22 @@ public class MainActivity extends Activity implements OnItemClickListener {
 	}
 
 	@Override
-	public void onItemClick(AdapterView<?> arg0, View arg1, int arg2, long arg3) {
-		Log.d("DEBUG", arg1 + "," + arg2 + "," + arg3);
-		Functions function = new Functions(this.getApplicationContext());
+	public void onItemClick(AdapterView<?> arg0, View view, int arg2, long arg3) {
+		Log.d("DEBUG", view + "," + arg2 + "," + arg3);
+		BasicFunction function = new BasicFunction(this.getApplicationContext());
 		switch (arg2) {
 		case 0:
 			function.reboot();
+			break;
+		case 1:
+			if (!ligntOn) {
+				DEBUG.d("true");
+				function.openLight();
+			} else {
+				DEBUG.d("false");
+				function.closeLight();
+			}
+			ligntOn = !ligntOn;
 			break;
 		default:
 			break;

@@ -16,7 +16,7 @@ public class FunctionGridAdapter extends BaseAdapter {
 	// 上下文对象
 	private Context context;
 	// 图片数组
-	private Integer[] imgs = { R.drawable.ic_launcher, R.drawable.ic_launcher,
+	private Integer[] imgs = { R.drawable.ic_restart, R.drawable.ic_switch_on,
 			R.drawable.ic_launcher, R.drawable.ic_launcher,
 			R.drawable.ic_launcher, R.drawable.ic_launcher,
 			R.drawable.ic_launcher };
