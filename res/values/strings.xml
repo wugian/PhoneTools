@@ -5,4 +5,22 @@
     <string name="action_settings">Settings</string>
     <string name="hello_world">Hello world!</string>
 
+    <string-array name="function_describe">
+
+　　                        <item>Reboot</item>
+
+　　                        <item>Light</item>
+
+　　                        <item>海淀区</item>
+
+　　                        <item>漳州市</item>
+
+　　                        <item>朝阳区</item>   
+
+			<item>漳州市</item>
+
+　　                        <item>朝阳区</item>
+
+　　    </string-array>
+
 </resources>
