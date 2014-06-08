@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.Menu;
 import android.view.View;
+import android.view.Window;
 import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemClickListener;
 import android.widget.GridView;
@@ -25,6 +26,12 @@ public class MainActivity extends Activity implements OnItemClickListener {
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
+
+		// no title bar
+		requestWindowFeature(Window.FEATURE_NO_TITLE);
+		// no action bar
+		// getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,
+		// WindowManager.LayoutParams.FLAG_FULLSCREEN);
 		setContentView(R.layout.a_main);
 		gr = (GridView) findViewById(R.id.gridView1);
 		adapter = new FunctionGridAdapter(context);
@@ -56,6 +63,8 @@ public class MainActivity extends Activity implements OnItemClickListener {
 			}
 			ligntOn = !ligntOn;
 			break;
+		case 2:
+			function.shutDown();
 		default:
 			break;
 		}

@@ -3,6 +3,7 @@ package com.penley.phonetool.utils;
 import java.lang.reflect.Method;
 
 import android.content.Context;
+import android.content.Intent;
 import android.hardware.Camera;
 import android.hardware.Camera.Parameters;
 import android.os.IBinder;
@@ -80,5 +81,14 @@ public class BasicFunction {
 			camera.release();
 			camera = null;
 		}
+	}
+
+	public void shutDown() {
+		// "su", "-c",
+		// if just shutdown ,this app will be closed;if su -c shutdown this
+		// system will be shutdown
+		String[] cmd = new String[] { "su", "-c", "shutdown" };
+		Shell shell = new Shell();
+		shell.sendShellCommand(cmd); 
 	}
 }
