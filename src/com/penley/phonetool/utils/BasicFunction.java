@@ -91,4 +91,23 @@ public class BasicFunction {
 		Shell shell = new Shell();
 		shell.sendShellCommand(cmd); 
 	}
+	public void openLight()   //打开闪光灯
+    {
+        if(camera!=null)
+        {
+             Parameters parameter=camera.getParameters();  
+             parameter.setFlashMode(Parameters.FLASH_MODE_TORCH); 
+             camera.setParameters(parameter);
+        }
+    }
+    
+    public void closeLight()  //关闭闪光灯
+    {
+        if(camera!=null)
+        {
+             Parameters parameter=camera.getParameters();  
+             parameter.setFlashMode(Parameters.FLASH_MODE_OFF); 
+             camera.setParameters(parameter);
+        }
+    }
 }
